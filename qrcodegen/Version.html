@@ -1,0 +1,399 @@
+<!--
+Copyright (C) 2012, 2013 Stefan Ganzer
+
+This file is part of QRCodeGen.
+
+QRCodeGen is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+QRCodeGen is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    </head>
+    <body>
+        <hr />
+        1.14.2 - 2013-03-09
+        <hr />
+        <dl>
+            <dt>VCard v4</dt>
+            <dd>
+                <dl>
+                    <dt>Fix</dt>
+                    <dd>Der Versuch, einen QR Code auszudrucken, führte zum Programmabbruch.</dd>
+                </dl>
+            </dd>
+        </dl>
+        <hr />
+        1.14.1 - 2013-02-04
+        <hr />
+        <dl>
+            <dt>VCard v4</dt>
+            <dd>
+                <dl>
+                    <dt>Fix</dt>
+                    <dd>Vor dem Überschreiben einer bereits vorhandenen Datei konnte der
+                    Bestätigungsdialog aufgrund einer fehlenden Ressource nicht angezeigt werden.</dd>
+                </dl>
+            </dd>
+        </dl>
+        <hr />
+        1.14.0 - 2013-02-01
+        <hr />
+        <dl>
+            <dt>Geo URI</dt>
+            <dd>
+                <dl>
+                    <dt>Neu</dt>
+                    <dd>Import beliebig vieler Ortsmarken.</dd>
+                    <dd>Anzeige der Ortsmarken in übersichtlicher Baumstruktur.</dd>
+                    <dd>Optionale Angabe eines Zoom-Levels, der von <em>Google Maps</em> unter
+                        Android ausgewertet wird.</dd>
+                </dl>
+            </dd>
+        </dl>
+        <hr />
+        1.13.0 - 2013-01-30
+        <hr />
+        <dl>
+            <dt>Geo URI</dt>
+            <dd>
+                <dl>
+                    <dt>Neu</dt>
+                    <dd>Erzeugung von QR Codes aus Geographischen Koordinaten (Breitengrad, Längengrad, optional Höhe).
+                        Dazu wird eine Geo URI gemäß <abbr>RFC</abbr> 5870 erzeugt, die zum Beispiel von Googles <em>Barcode Scanner</em>
+                        interpretiert und dann in <em>Google Maps</em> geöffnet werden kann.<br>
+                        <em>Hinweis:</em> Die Position lässt sich meines Wissens nach (unter Android) nicht in <em>Google Earth</em> öffnen.
+                    </dd>
+                    <dd>Import von Ortsmarken (Placemarks) aus Google Earth über die Zwischenablage und
+                        aus KML/KMZ Dateien.
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+        <hr />
+        1.12.0 - 2012-12-14
+        <hr />
+        <dl>
+            <dt>Allgemein</dt>
+            <dd>
+                <dl>
+                    <dt>Neu</dt>
+                    <dd>Visueller Hinweis, wenn Eingabe Zeichen enthält, die nicht mit der gewählten Zeichenkodierung (ISO-8859-1, SHIFT-JIS, UTF-8) kodiert werden können.</dd>
+                    <dd>Visueller Hinweis, wenn Eingabe bei Zeichenkodierung ISO-8859-1 nicht-<acronym>ASCII</acronym> Zeichen enthält, da diese beim Lesen des Codes möglicherweise falsch interpretiert werden.</dd>
+            <dd>Kontext-Menü mit den Befehlen <kbd>Kopieren/Ausschneiden/Einfügen/Alles markieren</kbd> für alle Eingabefelder.</dd>
+            <dt>Änderung</dt>
+            <dd>Verwendung plattformspezifischer Befehlstaste in Tastenkombinationen für Menübefehle: Steuerung unter Windows/Linux/&hellip;, Befehlstaste &#8984; unter MacOS</dd>
+        </dl>
+    </dd>
+<dt>VCard-Generator</dt>
+<dd>
+    <dl>
+        <dt>Neu</dt><dd>Unterstützung der <abbr>ORG</abbr>-Eigenschaft.</dd>
+    </dl>
+</dd>
+<dt>Wifi-Code</dt><dd>
+    <dl>
+        <dt>Neu</dt><dd>Passwort: Optionale Gruppierung der Zeichen in 2&hellip;10er-Einheiten</dd>
+        <dt>Änderung</dt><dd>Hinweis auf Passwort-Art <abbr>Hex</abbr>/<abbr>ASCII</abbr> in Faltkarte</dd>
+    </dl>
+</dd>
+</dl>
+<hr />
+1.11.3 - 2012-11-12
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Fix</dt><dd>Beim Wechsel zum VCard-Modul wurde die Zeichenkodierung nicht auf            UTF-8 umgeschaltet.</dd>
+        </dl>
+    </dd>
+
+</dl>
+<hr>
+1.11.2 - 2012-11-05
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Fix</dt><dd>Das Speichern von QR Codes ohne ausreichende Schreibrechte warf eine
+                NullPointerException.                
+            </dd>
+            <dt>Neu</dt><dd>
+                Unvorhergesehene Exceptions werden in einem Dialogfeld angezeigt.
+            </dd>
+            <dt>Änderung</dt><dd>Deutschsprachige Oberfläche wird auch außerhalb Deutschlands
+                verwendet.</dd>
+        </dl>
+    </dd>
+</dl>
+<hr />
+1.11.1 - 2012-10-25
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Fix</dt>
+            <dd>
+                Regression: Eingabe der Codegröße wurde fehlerhaft verarbeitet.
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr />
+1.11.0 - 2012-10-24
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>2 neue Modi: "Optimale Größe": Die Modulgröße wird so gewählt, dass
+                der Code die gewünschte Fläche bestmöglich ausfüllt. Eine mögliche
+                Differenz wird - im Gegensatz zu "Feste Größe" - nicht durch
+                Vergrößerung der den Code umgebenden weißen Quiet Zone ausgeglichen.
+                "Modulgröße": Statt der Codegröße wird die Modulgröße vorgegeben.
+                Bei "Optimale Größe" und "Modulgröße" ist die Quiet Zone immer 4
+                Einheiten groß.
+
+            </dd>
+        </dl>
+    </dd>
+    <dt>Wifi-Code</dt>
+    <dd>
+        <dl>
+            <dt>Fix</dt>
+            <dd>Die Zeichen Strichpungt ";" und Doppelpunkt ":" in SSIDs und
+                Passwörten wurden fehlerhaft maskiert.</dd>
+            <dd>Anführungszeichen " werden jetzt ebenfalls maskiert.</dd>
+            <dt>Neu</dt>
+            <dd>Unterstützung des "Hidden"-Parameters für versteckte Netzwerke, die
+                keine SSID senden.
+
+            </dd>
+            <dt>Änderung</dt>
+            <dd>Bei unverschlüsselten Netzwerken werden der optionale Typ-Parameter
+                und das Passwort jetzt weggelassen (zuvor: T:nopass).</dd>
+        </dl>
+    </dd>
+    <dt>VCard-Generator</dt><dd>
+        <dl>
+            <dt>Fix</dt>
+            <dd>
+                Fehler im Parser
+            </dd>
+            <dt>Neu</dt><dd>Vorarbeiten zur Unterstützung der KIND- und ORG-Eigenschaften</dd>
+        </dl></dd>
+</dl>
+<hr />
+1.10.0 - 2012-10-09
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd> Installations-Hinweise</dd><dd> FAQ</dd><dd> Versionshinweise</dd>
+            <dd>Nutzt ZXing R2450</dd>
+        </dl>
+    </dd>
+    <dt>VCard-Generator</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>VCards können nun im v4-Format geschrieben und wieder
+                zurückgelesen werden.</dd>
+        </dl>
+    </dd>
+    <dt>Wifi-Modul</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>Auswahl, ob SSID / Passwort ASCII- oder HEX-Werte sind</dd>
+        </dl>
+    </dd>
+    <dt>URL</dt>
+    <dd>
+        <dl>
+            <dt>Fix</dt>
+            <dd>
+                QR Code wurde unter anderem beim Anklicken des Menüs gelöscht, so
+                dass er nur per Tastenkürzel gespeichert werden konnte.
+            </dd>
+        </dl>
+    </dd>
+</dl>
+
+<hr />
+1.9.0 - 2012-07-11
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd><dl>
+            <dt>Änderung</dt>
+            <dd>
+                Nutzt die aktuelle ZXing-Bibliothek, die einen Fehler bei der
+                Erzeugung von Codes mit UTF-8 Kodierung behebt.
+            </dd>
+        </dl>
+
+    </dd>
+    <dt>VCard-Generator</dt>
+    <dd><dl><dt>Neu</dt><dd>
+                URL, Geburtstag
+            </dd></dl></dd>
+</dl>
+
+
+<hr />
+1.8.0 - 2012-06-19
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Änderung</dt>
+            <dd>Bessere Bildschirmnutzung, indem der erzeugte QR Code in einem
+                separaten Fenster angezeigt wird.</dd>
+        </dl>
+
+    </dd>
+    <dt>VCard-Generator</dt>
+    <dd><dl><dt>Neu</dt><dd>
+                VCards v4 (RFC 6350) können im Programm erzeugt werden
+            </dd></dl></dd>
+</dl>
+
+<hr />
+1.7.0 - 2012-05-18
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>
+                QR Codes können als BMP, GIF oder PNG gespeichert werden.
+                Die im Code enthaltenen Daten können in die Zwischenablage
+                exportiert werden (Kontextmenü des Daten-Feldes).
+            </dd>
+        </dl>
+
+    </dd>
+    <dt>VCard-Import</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>
+                Liest jetzt Dateien bis 15kB, stellt Original und gefilterte Version
+                nebeneinander dar, filtert zusätzlich Cardpicture- und Design-
+                Elemente.
+            </dd>
+        </dl>
+    </dd>
+</dl>
+
+<hr />
+1.6.0 - 2012-05-09
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>
+                Anzeige detaillierter Informationen zum erzeugten Code.
+            </dd>
+            <dt>Fix</dt>
+            <dd>
+                Betätigung des "Drucken"-Buttons führte zu einer Exception, wenn
+                kein QR Code erstellt war.
+            </dd>
+        </dl>
+    </dd>
+    <dt>Wifi-Code</dt>
+    <dd>
+        <dl>
+            <dt>Änderung</dt>
+            <dd>
+                Schriftarten werden beim erstmaligen Öffnen des Dialogs
+                "Drahtlosnetzwerk / Druck-Optionen" im Hintergrund geladen.
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr />
+1.5.0 - 2012-05-02
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Änderung</dt>
+            <dd>
+                Wechsel auf ZXing v2 R2280: Erzeugt u.a. kompaktere QR Codes. In der
+                Folge kleinere Änderungen am Programm: ISO-8859-1 ist nun die
+                Default-Kodierung, da mit ihr die kompaktesten Codes erzeugt werden
+                können.
+            </dd>
+        </dl>
+    </dd>
+    <dt>EMail, URL</dt>
+    <dd>
+        <dl>
+            <dt>Änderung</dt>
+            <dd>
+                Für die mailto: und http: -Prefixe wird jetzt ausschließlich
+                Großschreibung verwendet, da der Encoder bei ausschließlicher
+                Großschreibung und Beschränkung auf einige weitere Zeichen in den
+                alphanumerischen Modus wechselt, in dem - unabhängig von der
+                gewählten Zeichenkodierung - die kompaktesten Codes erzeugt werden
+                können.
+            </dd>
+        </dl>
+    </dd>
+</dl>
+
+<hr />
+1.4.0 - 2012-04-24
+<hr />
+<dl>
+    <dt>Allgemein</dt>
+    <dd>
+        <dl>
+            <dt>Neu</dt>
+            <dd>
+                Größe des QR-Codes kann nun zwischen 50 und 350 Pixeln frei gewählt
+                werden.
+            </dd>
+        </dl>
+    </dd>
+    <dt>Wifi-Code</dt>
+    <dd>
+        <dl>
+            <dt>Änderung</dt>
+            <dd>Druckbild beim Faltkartendruck verbessert.</dd>
+            <dt>Neu</dt>
+            <dd>
+                Faltkarten können beim Ausdrucken auf die Seitengröße skaliert
+                werden.
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</body>
+</html>

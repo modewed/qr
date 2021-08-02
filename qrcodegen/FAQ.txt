@@ -1,0 +1,83 @@
+-------------------------------------------------------------------------------
+Beim Doppelklick auf das .jar-Archiv passiert nichts, oder es öffnet sich eine 
+andere Anwendung.
+-------------------------------------------------------------------------------
+
+Haben Sie eine aktuelle Java Laufzeitumgebung (JRE) installiert?
+Sie erhalten sie zum Beispiel kostenlos unter http://www.java.com
+Möglicherweise ist die Verknüpfung von .jar-Archiven mit der 
+Java Laufzeitumgebung defekt.
+In vielen Fällen kann das Programm JarFix von Herrn Löfflmann helfen, das sie
+bei heise.de kostenlos herunterladen können:
+http://www.heise.de/download/jarfix.html
+
+-------------------------------------------------------------------------------
+Sonderzeichen / Umlaute werden nach dem Scannen mit der Anwendung [...] nicht
+angezeigt, wenn ISO-8859-1 ausgewählt wurde.
+-------------------------------------------------------------------------------
+
+Dies beruht auf einer Unklarheit im Standard und darauf, wie die Entwickler der
+ZXing-Bibliothek von Google, die von den meisten Anwendungen und Apps verwendet
+wird, diesen umgesetzt haben.
+Beim Kodieren wird ISO-8859-1 als Standard-Kodierung angenommen, so dass der
+QR Code keinen Hinweis auf diese Kodierung enthält (Extended Channel
+Interpretation - ECI). Beim Dekodieren lässt der Standard aber offen, welche
+Kodierung angenommen werden soll, wenn keine ECI-Informationen vorhanden sind.
+Die Implementierung der ZXing-Bibliothek versucht dann zu 'raten', ob
+ISO-8859-1, UTF-8 oder Shift JIS vorliegt. Wird die falsche Kodierung geraten,
+werden die Umlaute / Sonderzeichen nicht angezeigt.
+
+Es besteht die Möglichkeit, dem Dekoder einen Hinweis zu geben, welche Kodierung
+er annehmen soll, wenn er keine ECI-Informationen findet. Bitte wenden Sie sich
+hierfür an den Entwickler der Scanner-Anwendung/-App.
+
+-------------------------------------------------------------------------------
+Mittels 'VCard-Import' importierte VCards der Versionen 2.x und 3.x werden nach
+dem Scannen fehlerhaft angezeigt, oder enthalten keine Umlaute 
+-------------------------------------------------------------------------------
+
+Der VCard-Import verändert VCards beim Einlesen nur insofern, als dass er auf 
+Wunsch bestimmte Elemente entfernt, die den QR Code aufblähen, wie zum Beispiel
+Photos. Werden die VCards nach dem Scannen nicht vollständig angezeigt, ist mit
+großer Wahrscheinlichkeit die importierte VCard nicht standardkonform, oder die
+scannende Anwendung kann das Format der VCard nicht richtig interpretieren. Da
+VCards dieser Versionen nur ASCII-Zeichen enthalten dürfen, sollte die gewählte
+Zeichenkodierung keinen Einfluss auf das Ergebnis haben.
+
+-------------------------------------------------------------------------------
+Im Programm erstellte VCards werden nach den Scannen fehlerhaft angezeigt, oder
+enthalten keine Umlaute 
+-------------------------------------------------------------------------------
+
+Das Programm erzeugt VCards nach dem kommenden Standard v4. Dieser
+unterscheidet sich zum Teil deutlich von den bisherigen Versionen, und wird
+bisher nur von wenigen Anwendungen unterstützt. Vermutlich versucht die
+Anwendung, die VCard nach einem älteren Standard zu interpretieren, oder sie
+versteht die verwendete UTF-8 Kodierung nicht.
+
+-------------------------------------------------------------------------------
+Warum kann bei der Erstellung von VCards nur UTF-8 als Zeichenkodierung
+ausgewählt werden?
+-------------------------------------------------------------------------------
+
+V4-VCards nach RFC 6350 müssen UTF-8 verwenden. Daher kann hier keine andere
+Kodierung ausgewählt werden.
+
+-------------------------------------------------------------------------------
+Ich kann keine diakritischen Zeichen wie é, É, à, ... (Akut, Gravis, ...) durch
+Kombination "Akzenttaste"+<Zeichen> eingeben 
+-------------------------------------------------------------------------------
+
+Ursache ist ein Problem in der Java Laufzeitumgebung (JRE) von Sun/Oracle, das
+seit mindestens 2002 (sic!) immer wieder auftritt, und potentiell alle Java-
+Anwendungen betrifft, die Swing benutzen. Es gibt drei workarounds:
+    Sie erzeugen die Zeichen in einer nativen Windows-/Linux-Anwendung, und
+        kopieren sie in das entsprechende Eingabefeld.
+    Sie verwenden ein alternatives Tastaturlayout, bei dem die Zeichen auf
+        separaten Tasten liegen.
+    Sie geben die Zeichen über die Tastenkombination
+        ALT+<dreistellige Zahl auf dem Ziffernblock> ein.
+
+
+Copyright 2012, 2013 Stefan Ganzer
+portableqrcodegenerator@gmail.com

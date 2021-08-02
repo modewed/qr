@@ -1,0 +1,25 @@
+Installation
+
+Die Ausführung des Portable QR-Code Generators setzt eine installierte
+Java Laufzeitumgebung (Jara Runtime Environment - JRE) v6 oder neuer voraus.
+
+Eine Installation des QR Code Generators selbst ist nicht notwendig - nach dem
+Entpacken des zip-Archivs in ein beliebies Verzeichnis lässt er sich durch
+Doppelklick auf die Datei QRCodeGen bzw. QRCodeGen.jar starten.
+
+Sollte das Programm unter Windows trotz installiertem JRE nicht starten, ist
+möglicherweise die Verknüpfung mit .jar-Dateien defekt. In diesem Fall kann das
+Programm Jarfix von Herrn Löfflmann helfen, das Sie kostenlos unter
+http://www.heise.de/download/jarfix.html herunterladen können. 
+
+Für Windows-Betriebssysteme erhalten Sie ein JRE kostenlos von Oracle:
+http://www.java.com/
+
+Unter Linux kann Java meistens über einen Paketmanager installiert werden,
+oder Sie verwenden die Version von http://www.java.com/
+
+Das Programm sollte auch unter Mac OS X laufen, allerdings konnte ich dies
+nicht testen. Auch hier lautet die Downloadadresse für Java http://www.java.com/
+
+Copyright 2012, 2013 Stefan Ganzer
+portableqrcodegenerator@gmail.com
